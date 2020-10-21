@@ -16,8 +16,8 @@ class App extends Component {
   }
 
 
-
 addReservation = (newReservation) => {
+  console.log('addReservation IS RUNNING', newReservation);
   this.setState({ reservations: [...this.state.reservations, newReservation] })
 }
 
