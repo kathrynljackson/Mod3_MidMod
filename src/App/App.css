@@ -16,4 +16,47 @@
   color: teal;
   font-family: 'Pacifico', cursive;
   font-size: 50px;
+  text-shadow: 0px 0px 3px black;
+}
+
+/* .user-input {
+  display: flex;
+  flex-direction: row;
+  padding: 1%;
+} */
+
+.user-input {
+  justify-items: center;
+  align-self: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  column-gap: 2%;
+}
+
+.user-input input {
+  margin: 1%;
+}
+
+.existing-reservations {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.each-reservation {
+
+  background-color: white;
+  border: teal 4px solid;
+  color: teal;
+  margin: 1%;
+  padding: 1%;
+  border-radius: 6px;
+}
+
+.button {
+  background-color: teal;
+  color: white;
+  width: 70%;
+  border: teal solid 2px;
 }
