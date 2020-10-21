@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
 class Form extends Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
         this.state ={
             name: '',
             date: '',
@@ -41,13 +41,13 @@ class Form extends Component {
 
     render() {
         return (
-                <section className='user-input'>
+                <form className='user-input'>
                     <input onChange={event => this.handleChange(event)} type='text' name='name' value ={this.state.name} placeholder='Name'></input>
                     <input onChange={event => this.handleChange(event)} type='text' name='date' value ={this.state.date} placeholder='Date (mm/dd)'></input>
                     <input onChange={event => this.handleChange(event)} type='text' name='time' value ={this.state.time} placeholder='Time'></input>
                     <input onChange={event => this.handleChange(event)} type='text' name='number' value ={this.state.number} placeholder='Number of Guests'></input>
-                    <button className='make-reservation-button button' type='submit' onClick={event => this.makeReservation(event)}>Make Reservation</button>
-                </section>
+                    <button className='make-reservation-button button' onClick={event => this.makeReservation(event)}>Make Reservation</button>
+                </form>
         )
     }
 }
