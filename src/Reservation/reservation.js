@@ -16,19 +16,22 @@ componentDidMount() {
         .catch(error => console.log(error))
 }
 
+
+
 render() {
     console.log(this.state.reservations)
     return (
         <main>
+
             <section className='existing-reservations'>
                 {this.state.reservations.map((reservation, index) => {
                     return (
                         <section className='each-reservation' key={index}>
                         <h1>{reservation.name}</h1>
-                        <h1>{reservation.date}</h1>
-                        <h1>{reservation.time}</h1>
-                        <h1>{reservation.number}</h1>
-                        <button>Cancel</button>
+                        <p>{reservation.date}</p>
+                        <p>{reservation.time} pm</p>
+                        <p>Number of guests: {reservation.number}</p>
+                        <button className='cancel-button button'>Cancel</button>
                         </section>
                     )
                 })
