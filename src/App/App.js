@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
+import Reservation from '../Reservation/reservation.js';
+import { Route } from 'react-router-dom';
+
 
 class App extends Component {
   render() {
@@ -10,7 +13,9 @@ class App extends Component {
 
         </div>
         <div className='resy-container'>
-          
+          <Route exact path ='/'>
+            <Reservation />
+          </Route> 
         </div>
       </div>
     )
