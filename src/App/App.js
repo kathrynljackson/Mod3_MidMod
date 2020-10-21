@@ -2,9 +2,16 @@ import React, { Component } from 'react';
 import './App.css';
 import Reservation from '../Reservation/reservation.js';
 import { Route } from 'react-router-dom';
+import { fetchReservations } from '../fetch/fetch-requests.js';
 
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state= {
+
+    }
+  }
   render() {
     return (
       <div className="App">
