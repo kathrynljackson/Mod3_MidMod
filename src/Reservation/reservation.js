@@ -11,28 +11,28 @@ class Reservation extends Component {
     }
 
 componentDidMount() {
-    console.log('COMPONENT DID MOUNT IS RUNNING')
     fetchReservations()
-        //.then(data => this.setState({ reservations: data }))
-        //.catch(error => console.log(error))
+        .then(data => this.setState({ reservations: data }))
+        .catch(error => console.log(error))
 }
 
 render() {
+    console.log(this.state.reservations)
     return (
         <main>
             <section className='existing-reservations'>
-                {this.state.reservations.map(reservation => {
+                {this.state.reservations.map((reservation, index) => {
                     return (
-                        <section className='each-reservation'>
-                        <p>{reservation.name}</p>
-                        <p>{reservation.date}</p>
-                        <p>{reservation.time}</p>
-                        <p>{reservation.number}</p>
+                        <section className='each-reservation' key={index}>
+                        <h1>{reservation.name}</h1>
+                        <h1>{reservation.date}</h1>
+                        <h1>{reservation.time}</h1>
+                        <h1>{reservation.number}</h1>
                         <button>Cancel</button>
                         </section>
                     )
-                })}
-
+                })
+            }
             </section>
         </main>
     )
