@@ -1,17 +1,26 @@
 import React, { Component } from 'react';
 import './App.css';
 import Reservation from '../Reservation/reservation.js';
+import Form from '../Form/Form.js';
 import { Route } from 'react-router-dom';
-import { fetchReservations } from '../fetch/fetch-requests.js';
+//import { fetchReservations } from '../fetch/fetch-requests.js';
 
 
 class App extends Component {
   constructor() {
     super();
     this.state= {
-
+      reservations: [],
     }
+    this.addReservation = this.addReservation.bind(this)
   }
+
+
+
+addReservation = (newReservation) => {
+  this.setState({ reservations: [...this.state.reservations, newReservation] })
+}
+
   render() {
     return (
       <div className="App">
@@ -21,7 +30,8 @@ class App extends Component {
         </div>
         <div className='resy-container'>
           <Route exact path ='/'>
-            <Reservation />
+            <Form addReservation={this.addReservation} />
+            <Reservation reservations={this.state.reservations}/>
           </Route> 
         </div>
       </div>
