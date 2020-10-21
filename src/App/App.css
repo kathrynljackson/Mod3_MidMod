@@ -26,6 +26,7 @@
 } */
 
 .user-input {
+  border: ;
   justify-items: center;
   align-self: center;
   display: grid;
